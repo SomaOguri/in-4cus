@@ -1,5 +1,5 @@
 class WorkspacesController < ApplicationController
-    before_action :authenticate_user! 
+    before_action :authenticate_user!, only: [:new, :create]
       def index
         if params[:search] == nil
           @workspaces = params[:tag_id].present? ? Tag.find(params[:tag_id]).workspaces : Workspace.all
