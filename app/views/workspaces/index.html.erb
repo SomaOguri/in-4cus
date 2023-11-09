@@ -1,0 +1,73 @@
+<%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+<%= link_to "新規投稿ページへ", new_workspace_path %>
+<h1>23区のワークスペースを探す</h1>
+<h2>ワークスペースの特徴</h2>
+<!--タグ検索の部分-->
+<%= form_tag workspaces_path, method: :get, class: 'boards__searchForm' do %>
+  <%= select_tag :tag_id,
+    options_from_collection_for_select(Tag.all, :id, :tag_name, params[:tag_id]),
+    {
+      prompt: '23区から絞り込む',
+      onchange: 'submit(this.form);'
+    }
+  %>
+<%= page_entries_info @workspaces %>
+<%= paginate @workspaces %>
+<% end %>
+
+<%= link_to "足立区", workspaces_adachi_path %>
+<%= link_to "荒川区", workspaces_arakawa_path %>
+<%= link_to "板橋区", workspaces_itabashi_path %>
+<%= link_to "江戸川区", workspaces_edogawa_path %>
+<%= link_to "大田区", workspaces_ota_path %>
+<%= link_to "葛飾区", workspaces_katsushika_path %>
+<%= link_to "北区", workspaces_kita_path %>
+<%= link_to "江東区", workspaces_koto_path %>
+<%= link_to "品川区", workspaces_shinagawa_path %>
+<%= link_to "渋谷区", workspaces_shibuya_path %>
+<%= link_to "新宿区", workspaces_shinjuku_path %>
+<%= link_to "杉並区", workspaces_suginami_path %>
+<%= link_to "墨田区", workspaces_sumida_path %>
+<%= link_to "世田谷区", workspaces_setagaya_path %>
+<%= link_to "台東区", workspaces_taito_path %>
+<%= link_to "中央区", workspaces_chuo_path %>
+<%= link_to "千代田区", workspaces_chiyoda_path %>
+<%= link_to "豊島区", workspaces_toshima_path %>
+<%= link_to "中野区", workspaces_nakano_path %>
+<%= link_to "練馬区", workspaces_nerima_path %>
+<%= link_to "文京区", workspaces_bunkyo_path %>
+<%= link_to "港区", workspaces_minato_path %>
+<%= link_to "目黒区", workspaces_meguro_path %>
+
+<div class="workspaces-container">
+  <% @workspaces.each do |t| %>
+    <div class="workspace">
+      <%= t.name %>
+      <%= image_tag t.image_url, size: "250x200" if t.image? %>
+      <%= t.monday%>
+      <%= t.mondaytime%>
+      <%= t.tuesday%>
+      <%= t.tuesdaytime%>
+      <%= t.wednesday%>
+      <%= t.wednesdaytime%>
+      <%= t.thursday%>
+      <%= t.thursdaytime%>
+      <%= t.friday%>
+      <%= t.fridaytime%>
+      <%= t.saturday%>
+      <%= t.saturdaytime%>
+      <%= t.sunday%>
+      <%= t.sundaytime%>
+      <%= t.homepage %>
+      コンセント<%= t.outlet %>
+      wifi<%= t.wifi %>
+      面接<%= t.interview %>
+      会話<%= t.conversation %>
+      喫煙<%= t.smoking %>
+      <% t.tags.each do |tag| %>
+        <%= tag.tag_name %>
+      <% end %>
+      <%= button_to "削除する", workspace_path(t.id), method: :delete %>
+    </div>
+  <% end %>
+</div>

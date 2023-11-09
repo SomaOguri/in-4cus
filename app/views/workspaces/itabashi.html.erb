@@ -1,0 +1,14 @@
+<h1>板橋区</h1>
+<% @workspace.each do |t| %>
+  <% if t.category == '板橋区' %>  
+  <p><%= t.name %></p>
+  <p>Webdサイト:<%= t.homepage %></p>
+  <p>コンセント:<%= t.outlet %></p>
+  <p>wifi:<%= t.wifi %></p>
+  <p>面接:<%= t.interview %></p>
+  <p>会話:<%= t.conversation %></p>
+  <p>喫煙:<%= t.smoking %></p>
+  <% end %>
+<% end %>
+
+<%= link_to "Topに戻る", workspaces_path %>

@@ -1,0 +1,132 @@
+<h1>場所を追加</h1>
+<h3>場所の詳細</h3>
+<%= form_for @workspace do |f| %>
+    </div>
+    <div class='form-group'>
+    <h5>23区タグ選択:</h5>
+    <%= f.select :category, [["足立区", "adachi"], ["荒川区", "arakawa"], ["板橋区", "itabashi"], ["江戸川区", "edogawa"], ["大田区", "ota"], ["葛飾区", "katsushika"], ["北区", "kita"], ["江東区", "koto"], ["品川区", "shinagawa"] ,["渋谷区", "shibuya"], ["新宿区", "shinjuku"], ["杉並区", "suginami"], ["墨田区", "sumida"], ["世田谷区", "setagaya"], ["台東区", "taito"], ["中央区", "chuo"], ["千代田区", "chiyoda"], ["豊島区", "toshima"], ["中野区", "nakano"], ["練馬区", "nerima"], ["文京区", "bunkyo"], ["港区", "minato"], ["目黒区", "meguro"]], include_blank
+    </div>
+<!--データ型がstringで自由記述の入力フォーム--!>
+    <div class="field">
+        <%= f.label :場所の名前 %>
+        <%= f.text_field :name, :size => 30 %>
+    </div>
+    <div class="field">
+        <%= f.label :image %>
+        <%= f.file_field :image %>
+    </div>
+
+    <div class="field">
+        <%= f.label :営業時間 %>
+    <!DOCTYPE html>
+</div>
+    <f.label for="monday">月曜日：</label>
+    <input type="radio" id="monday-business" name="monday" value="business" checked>
+    <f.label for="monday-business">営業時間：</label>
+    <input type="text" id="mondaytime" name="mondaytime" placeholder="09:00~20:00">
+    <input type="radio" id="monday-dayoff" name="monday" value="dayoff">
+    <f.label for="monday-dayoff">定休日</label>
+    <br>
+
+    <f.label for="tuesday">火曜日：</label>
+    <input type="radio" id="tuesday-business" name="tuesday" value="business" checked>
+    <f.label for="monday-business">営業時間：</label>
+    <input type="text" id="tuesdaytime" name="tuesdaytime" placeholder="09:00~20:00">
+    <input type="radio" id="tuesday-dayoff" name="tuesday" value="dayoff">
+    <f.label for="tuesday-dayoff">定休日</label>
+    <br>
+
+    <f.label for="wednesday">水曜日：</label>
+    <input type="radio" id="wednesday-business" name="wednesday" value="business" checked>
+    <f.label for="wednesday-business">営業時間：</label>
+    <input type="text" id="wednesdaytime" name="wednesdaytime" placeholder="09:00~20:00">
+    <input type="radio" id="wednesday-dayoff" name="wednesday" value="dayoff">
+    <f.label for="wednesday-dayoff">定休日</label>
+    <br>
+
+    <f.label for="thursday">木曜日：</label>
+    <input type="radio" id="thursday-business" name="thursday" value="business" checked>
+    <f.label for="thursday-business">営業時間：</label>
+    <input type="text" id="thursdaytime" name="thursdaytime" placeholder="09:00~20:00">
+    <input type="radio" id="thursday-dayoff" name="thursday" value="dayoff">
+    <f.label for="thursday-dayoff">定休日</label>
+    <br>
+
+    <f.label for="friday">金曜日：</label>
+    <input type="radio" id="friday-business" name="friday" value="business" checked>
+    <f.label for="friday-business">営業時間：</label>
+    <input type="text" id="fridaytime" name="fridaytime" placeholder="09:00~20:00">
+    <input type="radio" id="friday-dayoff" name="friday" value="dayoff">
+    <f.label for="friday-dayoff">定休日</label>
+    <br>
+
+    <f.label for="saturday">土曜日：</label>
+    <input type="radio" id="saturday-business" name="saturday" value="business" checked>
+    <f.label for="saturday-business">営業時間：</label>
+    <input type="text" id="
+    " name="saturdaytime" placeholder="09:00~20:00">
+    <input type="radio" id="saturday-dayoff" name="saturday" value="dayoff">
+    <f.label for="saturday-dayoff">定休日</label>
+    <br>
+
+    <f.label for="sunday">日曜日：</label>
+    <input type="radio" id="sunday-business" name="sunday" value="business" checked>
+    <f.label for="sunday-business">営業時間：</label>
+    <input type="text" id="sundaytime" name="sundaytime" placeholder="09:00~20:00">
+    <input type="radio" id="sunday-dayoff" name="sunday" value="dayoff">
+    <f.label for="sunday-dayoff">定休日</label>
+    <br>
+</div>
+</html>
+    </div>
+
+    <!--データ型がstringで自由記述の入力フォーム--!>
+    <div class="field">
+        <%= f.label :ウェブサイト %>
+        <%= f.text_field :homepage, :size => 30 %>
+    </div>
+
+    <!--データ型がstringで自由記述の入力フォーム--!>
+    <div class="field">
+        <%= f.label :コンセント %>
+        <%= f.select :outlet, 
+        [["あり", "あり"], 
+        ["なし", "なし"]], include_blank: "選択して下さい" %>
+    </div>
+
+    <!--データ型がstringで自由記述の入力フォーム--!>
+    <div class="wifi">
+        <%= f.label :Wifi %>
+        <%= f.select :wifi, 
+        [["あり", "あり"], 
+        ["なし", "なし"]], include_blank: "選択して下さい" %>
+    </div>
+
+    <!--データ型がstringで自由記述の入力フォーム--!>
+    <div class="interview">
+        <%= f.label :面接 %>
+        <%= f.select :interview, 
+        [["あり", "あり"], 
+        ["なし", "なし"]], include_blank: "選択して下さい" %>
+    </div>
+
+    <!--データ型がstringで自由記述の入力フォーム--!>
+    <div class="conversation">
+        <%= f.label :会話 %>
+        <%= f.select :conversation, 
+        [["あり", "あり"], 
+        ["なし", "なし"]], include_blank: "選択して下さい" %>
+    </div>
+
+    <!--データ型がstringで自由記述の入力フォーム--!>
+    <div class="conversation">
+        <%= f.label :喫煙 %>
+        <%= f.select :smoking, 
+        [["あり", "あり"], 
+        ["なし", "なし"]], include_blank: "選択して下さい" %>
+    </div>    
+            <%= f.submit "投稿する" %>
+<% end %>
+
+
+<%= link_to "Topに戻る", workspaces_path %>
